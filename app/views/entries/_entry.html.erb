@@ -6,7 +6,7 @@
     <%= image_tag entry.picture.url if entry.picture? %>
   </span>
   <span class="timestamp">
-    Posted at <%= (entry.created_at) %> by <%= entry.user.name %>
+    Posted at <%= (entry.created_at) %> by <%= link_to entry.user.name, entry.user %>
     <% if current_user?(entry.user) %>
       <%= link_to "delete", entry, method: :delete,
                                        data: { confirm: "You sure?" } %>
