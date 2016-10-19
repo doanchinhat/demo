@@ -34,7 +34,7 @@ class EntriesController < ApplicationController
     @entry = Entry.find_by id: params[:id]
     if @entry.update_attributes(entry_params)
       flash[:success] = "Entry edited"
-      redirect_to @entry
+      redirect_to root_url
     else
       render 'edit'
     end
