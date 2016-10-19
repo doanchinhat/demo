@@ -9,9 +9,9 @@
   <span class="timestamp">
     Posted at <%= (entry.created_at) %> by <%= link_to entry.user.name, entry.user %>
     <% if current_user?(entry.user) %>
-      <%= link_to "delete", entry, method: :delete,
+      <%= link_to "Delete", entry, method: :delete,
                                        data: { confirm: "You sure?" } %>
-      <%= link_to "edit", edit_entry_path(entry)%>
+      <%= link_to "Edit", edit_entry_path(entry)%>
 
 
     <% end %>

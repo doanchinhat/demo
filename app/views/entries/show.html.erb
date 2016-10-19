@@ -7,7 +7,7 @@
     <%= image_tag @entry.picture.url if @entry.picture? %>
   </span>
   <span class="timestamp">
-    Posted at <%= (@entry.created_at) %> by <%= link_to @entry.user.name %>
+    Posted at <%= (@entry.created_at) %> by <%= link_to @entry.user.name,@entry.user %>
   </span>
 <div>
 
