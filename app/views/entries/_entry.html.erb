@@ -1,20 +1,15 @@
 <li id="entry-<%= entry.id %>">
-  <span class="title"><%= link_to entry.title.titleize, entry %>  </span>
-
-  <%= link_to gravatar_for(entry.user, size: 50), entry.user %>
-  <span class="content">
-  	<%= entry.content %>
-    <%= image_tag entry.picture.url if entry.picture? %>
-  </span>
-  <span class="timestamp">
-    Posted at <%= (entry.created_at) %> by <%= link_to entry.user.name, entry.user %>
-    <% if current_user?(entry.user) %>
-      <%= link_to "Delete", entry, method: :delete,
-                                       data: { confirm: "You sure?" } %>
-      <%= link_to "Edit", edit_entry_path(entry)%>
-
-
-    <% end %>
-  </span>
-
+<span class="title"><%= link_to entry.title.titleize, entry %>  </span>
+<%= link_to gravatar_for(entry.user, size: 50), entry.user %>
+<span class="content">
+  <%= entry.content %>
+  <%= image_tag entry.picture.url if entry.picture? %>
+</span>
+<span class="timestamp">
+  Posted at <%= (entry.created_at) %> by <%= link_to entry.user.name, entry.user %>
+  <% if current_user?(entry.user) %>
+    <%= link_to "Delete", entry, method: :delete,data: { confirm: "You sure?" } %>
+    <%= link_to "Edit", edit_entry_path(entry)%>
+  <% end %>
+</span>
 </li>

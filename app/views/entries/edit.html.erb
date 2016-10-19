@@ -1,21 +1,21 @@
 <div class="row">
-    <aside class="col-md-6 col-md-offset-3">
-      <section class="entry_form">
-<%= form_for(@entry, html: { multipart: true }) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-    <div class="field">
-    <%= f.text_field :title%>
-  </div>
-  <div class="field">
-    <%= f.text_area :content%>
-  </div>
-  <%= f.submit "Save", class: "btn btn-primary" %>
-  <span class="picture">
-    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
-  </span>
-<% end %>
-<section>
-<aside>
+  <aside class="col-md-6 col-md-offset-3">
+    <section class="entry_form">
+      <%= form_for(@entry, html: { multipart: true }) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="field">
+          <%= f.text_field :title%>
+        </div>
+        <div class="field">
+          <%= f.text_area :content%>
+        </div>
+        <%= f.submit "Save", class: "btn btn-primary" %>
+        <span class="picture">
+          <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+        </span>
+      <% end %>
+    <section>
+  <aside>
 <div>
 
 <script type="text/javascript">
@@ -26,4 +26,3 @@
     }
   });
 </script>
-<div>

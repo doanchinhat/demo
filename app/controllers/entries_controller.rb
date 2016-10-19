@@ -14,9 +14,8 @@ class EntriesController < ApplicationController
     end
   end
 
-
 	def show
-		@entry = Entry.find_by id: params[:id]
+    @entry = Entry.find_by id: params[:id]
     @comments = Comment.where(entry_id: @entry).order("created_at DESC")
   end
 
@@ -41,7 +40,6 @@ class EntriesController < ApplicationController
   end
 
   private
-
     def entry_params
       params.require(:entry).permit(:content, :title, :picture)
     end

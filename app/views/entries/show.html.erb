@@ -1,6 +1,5 @@
 <div class = "entries">
   <span class="title"><%= @entry.title %>  </span>
-
   <%= gravatar_for(@entry.user, size: 50) %>
   <span class="content">
     <%= @entry.content %>
@@ -10,5 +9,4 @@
     Posted at <%= (@entry.created_at) %> by <%= link_to @entry.user.name,@entry.user %>
   </span>
 <div>
-
 <%= render 'comments/comment' %>

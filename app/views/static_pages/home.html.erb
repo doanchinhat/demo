@@ -1,4 +1,18 @@
-<% if logged_in? %>
+ <% if !logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <%= link_to image_tag("framgia.png", alt: "Framgia logo"),'http://framgia.com/' %>
+      <p>
+        This is the home page of Demo Project
+      </p>
+      <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+    </aside>
+    <div class="col-md-8">
+      <h3>Entry Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
   <div class="row">
     <aside class="col-md-4">
       <section class="user_info">
@@ -11,23 +25,12 @@
         <%= render 'shared/entry_form' %>
       </section>
     </aside>
-      <div class="col-md-8">
+    <div class="col-md-8">
       <h3>Entry Feed</h3>
       <%= render 'shared/feed' %>
     </div>
   </div>
-<% else %>
-
-<div class="center jumbotron">
-  <h1>Welcome to Demo Project</h1>
-
-  <h2>
-    This is the home page of Demo Project
-  </h2>
-
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-</div>
-
-<%= link_to image_tag("framgia.png", alt: "Framgia logo"),
-            'http://framgia.com/' %>
 <% end %>
+
+
+
