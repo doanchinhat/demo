@@ -1,0 +1,14 @@
+<div class = "entries">
+  <span class="title"><%= @entry.title %>  </span>
+
+  <%= gravatar_for(@entry.user, size: 50) %>
+  <span class="content">
+    <%= @entry.content %>
+    <%= image_tag @entry.picture.url if @entry.picture? %>
+  </span>
+  <span class="timestamp">
+    Posted at <%= (@entry.created_at) %> by <%= link_to @entry.user.name %>
+  </span>
+<div>
+
+<%= render 'comments/comment' %>

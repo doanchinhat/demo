@@ -1,5 +1,6 @@
 <li id="entry-<%= entry.id %>">
-  <span class="title"><%= entry.title %></span>
+  <span class="title"><%= link_to entry.title.titleize, entry %>  </span>
+
   <%= link_to gravatar_for(entry.user, size: 50), entry.user %>
   <span class="content">
   	<%= entry.content %>
@@ -10,6 +11,10 @@
     <% if current_user?(entry.user) %>
       <%= link_to "delete", entry, method: :delete,
                                        data: { confirm: "You sure?" } %>
+      <%= link_to "edit", edit_entry_path(entry)%>
+
+
     <% end %>
   </span>
+
 </li>
